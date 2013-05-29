@@ -9,7 +9,16 @@
 /***********************************************************************************
 cart page custom styles
 ************************************************************************************/
+.fixed_container{
+	width: 100%;
+position: fixed;
+top: 128px;
+left: 75%;
+}
 
+.checkout_pages_margin{
+	margin-bottom: 30%;
+}
 
 .margin-top{margin-top: 3.8%;}
 
