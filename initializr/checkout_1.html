@@ -19,7 +19,7 @@
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/vendor/jquery-ui.js"></script>
-         <script src="js/vendor/jquery.scrollTo-1.4.3.1-min.js"></script>
+         <script src="js/vendor/jquery.scrollto.js"></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script type="text/javascript">
         $(function(){
@@ -28,8 +28,17 @@
                 collapsible: true 
             });
 
+
         });
         </script>
+         <script type="text/javascript">
+            $(function(){
+            $('.next_btn').click(function(){
+               $.scrollTo('.payment');
+            });
+
+            });
+       </script>
     </head>
     <body>
         <div class="container-fluid">
@@ -88,7 +97,7 @@
                                     <textarea id="about" class="span12"></textarea>
                                 </div>
                                 <div class="span9">
-                                    <input type="submit" class="btn btn-primary btn-large pull-right" value="Next">
+                                    <button  class="btn btn-primary btn-large pull-right next_btn" value="Next">Next</button>
                                 </div>
                                 </fieldset>
                             </div>
@@ -98,7 +107,7 @@
                         </div>
                 </form>    
         </div> <!-- /container -->
-        <div class="container-fluid">
+        <div class="container-fluid payment" >
             <div class="row-fluid">
                 <div class="span12">
                     
@@ -209,7 +218,9 @@
                                     </div>
                                     <div class="span4">
                                         <label for="cellphone">Cell Phone</label>
-                                        <input type="number" id="cellphone">
+                                        <input type="tel" id="cellphone">
+                                        <label for="homephone">Home Phone</label>
+                                        <input type="tel" id="homephone">
                                     </div>
                                 </div>
                                 <div class="span7 offset1 margin-top">
@@ -537,10 +548,62 @@
                         </div>
                 </form>    
         </div> <!-- /container -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
+                <div class="container-fluid ">
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                <form class="span12 pull-right">
+                       
+                             
+                                <ul class="inline">
+                                    <li class="breadcrumb_img"><a href="#">Traveler Info</a></li>
+                                    <li class="breadcrumb_img"><a href="#">Payment Info</a></li>
+                                    <li class="breadcrumb_img"><a href="#">Confirmation</a></li>
+                                    <li class="breadcrumb_img"><a href="#">Insurance</a></li>
+                                    <li class="breadcrumb_img"><a href="#">Finish</a></li>
+                                </ul>
+                            
+                    
+                        <div class="row-fluid checkout_pages_margin" >
+                            <div class="span9 menu-shadow">
+                                <fieldset class="checkout_1_field">
+                                <div class="span9 reviewbox">
+                                        <h3>Review and Book Your Tours/Activities</h3><span class="pull-right">Print | Save</span>
+                                        <h4>You're almost finished! Before you book your trip, please review the following:</h4>
+                                        <ol class="checkout_list">
+                                            <hr>
+                                            <li>Review your activities <a href="#">details</a> to make sure the dates and times are correct.</li>
+                                            <hr>
+                                            <li>Check your spelling. Traveler names must match government-issued photo ID exactly.<br><span id="traveller1"><strong>Traveler 1:</strong></span><a href="#">(Make Changes)</a></li>
+                                            <hr>
+                                            <li>Review the terms of your booking:</li>
+                                            <hr>
+                                        </ol>
+                                <div class="span9 inset_ul">
+                                    <p>We understand that vacation plans change.. We do not charge a cancel or change fee. When the airline charges such fees in accordance with its's own policies, the cost will be passed on to you.</p>
+                                    <ul>
+                                        <li><strong>Tickets are nonrefundable and nontransferable. A fee of $150.00 per ticket is charged for itinerary changes. Name changes are not allowed.</strong></li>
+                                        <li>Please read the complete penalty rules for changes and cancellations applicable to this fare.</li>
+                                        <li>Please read important information regarding <a href="#">airline liability limitations.</a></li>
+                                        <li>This price includes a nonrefundable booking fee.</li>
+                                        <li>Fares are not guaranteed until ticketed.</li>
+                                    </ul>
+                                    <sub class="red">Names on airline tickets cannot be changed once issued. If the name on your ticket does not exactly match your ID, you may be denied boarding. Tour refunds cannot be given for instances of denied boarding due to improper identification.</sub>
+
+                                </div> 
+                                <div class="span9">
+                                    <p>By completing this booking I agree that I have read and accept the above <a href="#">Rules and Restrictions</a>, the <a href="#">Terms of Use</a> and the <a href="#">Privacy Policy</a><br>
+                                    <input type="submit" class="btn btn-large btn-success" value="COMPLETE BOOKING"></p>
+                                    <p>We use secure transmisssion and encrypted storage to protect your personal information.</p>
+                                </div>  
+                                </div>
+                                </fieldset>
+                            </div>
+                            </div>
+                        </div>
+                </form>    
+        </div>
+
     </body>
 </html>
 
