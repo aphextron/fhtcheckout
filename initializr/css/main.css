@@ -90,7 +90,12 @@ height: 74px;
 	margin-left: -2px;
 margin-right: -17px;
 }
-
+.error{
+	color: red;
+}
+.input-cvv{
+	width: 30px;
+}
 .breadcrumb_img a:inactive{
 	color: grey;
 }

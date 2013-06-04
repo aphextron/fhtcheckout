@@ -28,8 +28,7 @@
             $('#accordion').accordion({
                 collapsible: true 
             });
-            $('#booking').validate();
-
+           
         });
         </script>
          <script type="text/javascript">
@@ -38,9 +37,21 @@
                  $('.next_btn0').click(function(){
                     $.scrollTo('.travelerInfo', {duration:250});
                 });
-                $('.next_btn1').click(function(){
-                    $.scrollTo('.payment', {duration:250});
-                });
+
+                
+            $('#booking').validate({
+           
+            invalidHandler: function(event, validator) {
+             var errors = validator.numberOfInvalids();
+                if (errors) {
+                    $('#booking').effect('shake'); 
+                }               
+             },
+            submitHandler: function() { $.scrollTo('.payment', {duration:250}); }
+            
+            });
+
+              
                 $('.next_btn2').click(function(){
                     $.scrollTo('.confirmation', {duration:250});
                 });
@@ -64,7 +75,7 @@
             <div class="row-fluid">
                 <div class="span12">
                     
-                <form class="span12 pull-right">
+                <form class="span12 pull-right" id="booking">
                     <div class="fixed_container_top">
 
                        <legend class="legend_cart"><img src="./img/shopping_cart_icon.png" class="cart_img">Secure Checkout</legend>
@@ -85,27 +96,28 @@
                                 <h3>Traveler Information</h3>
                                 <div class="span3">
                                     <label for="arrival_date">Arrival Date</label>
-                                    <input id="arrival_date" type="date"/>
+                                    <input class="required" id="arrival_date" type="date" name="arrival_date"/>
                                 </div>
                                 <div class="span3">
                                     <label for="departure_date">Departure Date</label>
-                                    <input id="departure_date" type="date"/>
+                                    <input class="required" id="departure_date" type="date" name="departure_date"/>
                                 </div>
                                 <div class="span3">
                                     <label for="cell_number">Cell Phone Number</label>
-                                    <input id="cell_number" type="number"/>
+                                    <input class="required" id="cell_number" type="text" name="cell_number"/>
                                 </div>
                                 <div class="span3">
                                     <label for="first_name">First Name</label>
-                                    <input id="arrival_date" type="text"/>
+                                    <input class="required" id="first_name" type="text" name="first_name"/>
                                 </div>
                                 <div class="span3">
                                     <label for="last_name">Last Name</label>
-                                    <input id="last_name" type="text"/>
+                                    <input class="required" id="last_name" type="text" name="last_name"/>
                                 </div>
                                 <div class="span3">
                                     <label for="hotel">Your Hotel</label>
-                                    <select id="hotel">
+                                    <select id="hotel" name="hotel" class="required">
+                                        <option></option>
                                         <option>option1</option>
                                         <option>option2</option>
                                         <option>option3</option>
@@ -115,10 +127,10 @@
                                 </div>
                                 <div class="span9">
                                     <label for="about">Notes/What brings you to Hawaii?</label>
-                                    <textarea id="about" class="span12"></textarea>
+                                    <textarea id="about" class="span10" name="about"></textarea>
                                 </div>
                                 <div class="span9">
-                                    <a class="btn btn-primary btn-large pull-right next_btn1" value="Next">Next</a>
+                                    <input type="submit" class="btn btn-primary btn-large pull-right next_btn1" value="Submit"></input>
                                 </div>
                                 </fieldset>
                             </div>
@@ -145,37 +157,22 @@
                                 <fieldset class="checkout_1_field">
                                 <h3>Payment Information</h3>
                                 <div class="span3">
-                                    <label for="cc_number">Card Number</label>
-                                    <input type="number" class="input-medium "id="cc_number">
-                                    <label for="cvv_number">CVV</label>
-                                    <input type="number" class="input-mini" id="cvv_number"> 
-                                    <label for="cc_expiration_month">Expiration Date</label>
-                                    <select class="input-small" id="cc_expiration_month">
-                                        <option>Month</option>
-                                        <option>January</option>
-                                        <option>February</option>
-                                        <option>March</option>
-                                        <option>April</option>
-                                        <option>May</option>
-                                        <option>June</option>
-                                        <option>July</option>
-                                        <option>August</option>
-                                        <option>September</option>
-                                        <option>October</option>
-                                        <option>November</option>
-                                        <option>December</option>
-                                    </select>
-                                    <select id="cc_expiraton_year" class="input-small">
-                                        <option>Year</option>
-                                        <option>2013</option>
-                                        <option>2014</option>
-                                        <option>2015</option>
-                                        <option>2016</option>
-                                        <option>2017</option>
-                                        <option>2018</option>
-                                    </select>
+                                    <img src="./img/cc_image.png">
                                     <label for="cardholder">Cardholder Name</label>
-                                    <input type="text" id="cardholder">
+                                    <input type="text" id="cardholder" name="cardholder">
+                                    <div class="controls">
+                                        <div class="span6">
+                                            <label for="cc_number">Card Number</label>
+                                            <input type="text" class="input-medium" name="cc_number" id="cc_number">
+                                        </div>
+                                        <div class="span4  pull-right">
+                                            <label for="cvv_number">CVV</label>
+                                            <input type="text" maxlength="3" class="input-cvv" name="cvv_number" id="cvv_number"> 
+                                        </div>
+                                    </div>
+                                    <label for="cc_expiration">Expiration Date</label>
+                                    <input type="month" id="cc_expiration" name="cc_expiration">
+                                    
                                 </div>
 
                                 <div class="span3">
@@ -199,7 +196,7 @@
                                     <select>
                                         <option>Hawaii</option>
                                     </select>
-                                    <img src="./img/cc_image.png" class="margin-top">
+                                    
                                 </div>
                                 <div class="span9">
                                     <a class="btn btn-primary btn-large pull-right next_btn2" value="Next">Next</a>
