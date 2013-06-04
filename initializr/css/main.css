@@ -10,10 +10,10 @@
 cart page custom styles
 ************************************************************************************/
 .fixed_container{
-	width: 100%;
 position: fixed;
-top: 128px;
-left: 75%;
+top: 0px;
+width: 256px !important;
+right: 13px;
 }
 
 .checkout_pages_margin{
@@ -32,8 +32,9 @@ left: 75%;
 	width: 100%;
 }
 .cart_img{
-	width: 46px;
-padding: 14px;
+width: 36px;
+padding: 16px 10px 6px;
+margin-top: -10px;
 }
 .legend_cart{
 background: rgb(183,222,237); /* Old browsers */
@@ -48,9 +49,13 @@ margin: 0;
 border-radius:10px 10px 0px 0px; 
 color: #FFF;
 text-shadow:0px -1px 0px grey;
+width: 83%;
+font-size: 17px;
 }
 
-
+#accordion .legend_cart{
+	width: 100% !important;
+}
 
 /*********************************************************************************************
 checkout page 1 styles
@@ -73,7 +78,8 @@ margin: 7px 0px 0px 0px
 }
 
 .product_img_side_cart{
-	width: 103px;
+	width: 75px;
+height: 74px;
 }
 .breadcrumb_img {
 	width: 190px;
@@ -81,6 +87,8 @@ margin: 7px 0px 0px 0px
 	background: url("../img/checkout_breadcrumb.png") no-repeat;
 	background-size: 100%;
 	margin-top: 7px;
+	margin-left: -2px;
+margin-right: -17px;
 }
 
 .breadcrumb_img a:inactive{
@@ -93,6 +101,7 @@ top: 12px;
 color: white;
 font-size: 16px;
 text-shadow: 0px -1px 0px grey;
+
 }
 .no_border
 {
