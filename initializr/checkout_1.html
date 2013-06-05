@@ -258,12 +258,12 @@
                                     <table class="table table-hover">
                                         <tr>
                                             <td>
-                                                <input type="radio" id="yes_insurance" class="pull-left"> <p class="pull-left"><strong>Yes</strong>, add Travel insurance for $33.04 per person. <a href="#"> View full description of coverage.</a></p>
+                                                <input type="radio" value="yes_insurance" class="pull-left" name="insurance_choice"> <p class="pull-left"><strong>Yes</strong>, add Travel insurance for $33.04 per person. <a href="#"> View full description of coverage.</a></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <input type="radio" id="no_insurance" class="pull-left"><p class="pull-left"><strong>No,</strong> I don't need travel protection and    understand it isn't available after booking. 
+                                                <input type="radio" value="no_insurance" class="pull-left" name="insurance_choice"><p class="pull-left"><strong>No,</strong> I don't need travel protection and    understand it isn't available after booking. 
                                             </td>
                                         </tr>
                                         <tfoot>
@@ -424,13 +424,13 @@
                                                       <tr>
                                                         <td>
                                                           <label for="yes_pickup">Yes, pick me up with a Lei greeting for $24.00</label>
-                                                          <input id="yes_pickup" type="radio" class="pull-left">
+                                                          <input name="pickup" id="yes_pickup" value="yes_pickup" type="radio" class="pull-left required">
                                                         </td>
                                                       </tr>
                                                       <tr>
                                                         <td>
                                                           <label for="no_pickup">No thank you.</label>
-                                                          <input id="no_pickup" type="radio" class="pull-left">
+                                                          <input name="pickup" id="no_pickup" value="no_pickup" type="radio" class="pull-left">
                                                         </td>
                                                       </tr>
                                                     </table>
@@ -443,7 +443,7 @@
                                             
                               
                                     <div class="span9">
-                                        <a class="btn btn-primary btn-large pull-right next_btn5" value="Next">Next</a>  
+                                        <input type="submit" class="btn btn-primary btn-large pull-right"  value="Next"></input>  
                                     </div>
                                 
                                 </fieldset>

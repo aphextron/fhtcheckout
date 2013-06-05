@@ -21,6 +21,21 @@ $(function(){
                  $('.next_btn0').click(function(){
                     $.scrollTo('.travelerInfo', {duration:250});
                 });
+                   $('.next_btn1').click(function(){
+                    $.scrollTo('.payment', {duration:250});
+                });
+                    $('.next_btn2').click(function(){
+                    $.scrollTo('.confirmation', {duration:250});
+                });
+                    $('.next_btn3').click(function(){
+                    $.scrollTo('.insurance', {duration:250});
+                });
+                     $('.next_btn4').click(function(){
+                    $.scrollTo('.finish', {duration:250});
+                });
+                  $('.next_btn5').click(function(){
+                    $.scrollTo('.finish2', {duration:250});
+                });
 
             
                 
