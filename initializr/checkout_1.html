@@ -22,52 +22,6 @@
          <script src="js/vendor/jquery.scrollto.js"></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
-        <script type="text/javascript">
-        $(function(){
-
-            $('#accordion').accordion({
-                collapsible: true 
-            });
-           
-        });
-        </script>
-         <script type="text/javascript">
-            $(function(){
-                
-                 $('.next_btn0').click(function(){
-                    $.scrollTo('.travelerInfo', {duration:250});
-                });
-
-                
-            $('#booking').validate({
-           
-            invalidHandler: function(event, validator) {
-             var errors = validator.numberOfInvalids();
-                if (errors) {
-                    $('#booking').effect('shake'); 
-                }               
-             },
-            submitHandler: function() { $.scrollTo('.payment', {duration:250}); }
-            
-            });
-
-              
-                $('.next_btn2').click(function(){
-                    $.scrollTo('.confirmation', {duration:250});
-                });
-                $('.next_btn3').click(function(){
-                    $.scrollTo('.insurance', {duration:250});
-                });
-                $('.next_btn4').click(function(){
-                    $.scrollTo('.finish', {duration:250});
-                });
-                 $('.next_btn5').click(function(){
-                    $.scrollTo('.finish2', {duration:250});
-                });
-              
-
-            });
-       </script>
     </head>
     <body>
         <div class="container">
@@ -130,7 +84,7 @@
                                     <textarea id="about" class="span10" name="about"></textarea>
                                 </div>
                                 <div class="span9">
-                                    <input type="submit" class="btn btn-primary btn-large pull-right next_btn1" value="Submit"></input>
+                                    <input type="submit" class="btn btn-primary btn-large pull-right" value="Submit"></input>
                                 </div>
                                 </fieldset>
                             </div>
@@ -144,7 +98,7 @@
             <div class="row-fluid">
                 <div class="span12">
                     
-                <form class="span12 pull-right">
+                <form class="span12 pull-right" id="payment">
                          <ul class="inline">
                                     <li class="breadcrumb_img next_btn0"><a href="#">Traveler Info</a></li>
                                     <li class="breadcrumb_img next_btn1"><a href="#">Payment Info</a></li>
@@ -159,61 +113,63 @@
                                 <div class="span3">
                                     <img src="./img/cc_image.png">
                                     <label for="cardholder">Cardholder Name</label>
-                                    <input type="text" id="cardholder" name="cardholder">
+                                    <input type="text" id="cardholder" name="cardholder" class="required">
                                     <div class="controls">
                                         <div class="span6">
                                             <label for="cc_number">Card Number</label>
-                                            <input type="text" class="input-medium" name="cc_number" id="cc_number">
+                                            <input type="text" class="input-medium required" name="cc_number" id="cc_number">
                                         </div>
                                         <div class="span4  pull-right">
                                             <label for="cvv_number">CVV</label>
-                                            <input type="text" maxlength="3" class="input-cvv" name="cvv_number" id="cvv_number"> 
+                                            <input type="text" maxlength="3" class="input-cvv required" name="cvv_number" id="cvv_number"> 
                                         </div>
                                     </div>
                                     <label for="cc_expiration">Expiration Date</label>
-                                    <input type="month" id="cc_expiration" name="cc_expiration">
+                                    <input type="month" id="cc_expiration" name="cc_expiration" class="required">
                                     
                                 </div>
 
                                 <div class="span3">
                                     <label for="address_1">Address Line 1</label>
-                                    <input type="text" id="address_1">
-                                    <label for="address_2">Address Line 2</label>
-                                    <input type="text" id="address_2">
+                                    <input type="text" id="address_1" name="address_1" class="required">
+                                    <label for="address_2" >Address Line 2</label>
+                                    <input type="text" id="address_2" name="address_2" class="required">
                                     <div class="controls controls-row">
                                         <label for="zipcode">Zip Code</label>
-                                        <input type="number">
+                                        <input type="text" name="zipcode" id="zipcode" class="required">
                                         <label for="country">Country</label>
-                                        <select>
+                                        <select id="country" name="country" class="required">
+                                            <option></option>
                                             <option>United States of America</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="span3">
                                     <label for="city">City</label>
-                                    <input type="text" id="city">
+                                    <input type="text" id="city" name="city" class="required">
                                     <label for="state">State</label>
-                                    <select>
+                                    <select id="state" name="state" class="required">
+                                        <option></option>
                                         <option>Hawaii</option>
                                     </select>
                                     
                                 </div>
                                 <div class="span9">
-                                    <a class="btn btn-primary btn-large pull-right next_btn2" value="Next">Next</a>
+                                    <input type="submit" class="btn btn-primary btn-large pull-right" value="Next"></input>
                                 </div>
                                 </fieldset>
                             </div>
                            
                             </div>
-                            </div>
-                        </div>
-                </form>    
+                        </form>    
+                    </div>
+                </div>
         </div> <!-- /container -->
         <div class="container-fluid confirmation">
             <div class="row-fluid">
                 <div class="span12">
                     
-                <form class="span12 pull-right">
+                <form class="span12 pull-right" id="confirmation">
                             <ul class="inline">
                                     <li class="breadcrumb_img next_btn0"><a href="#">Traveler Info</a></li>
                                     <li class="breadcrumb_img next_btn1"><a href="#">Payment Info</a></li>
@@ -229,32 +185,32 @@
                                 <div class="row-fluid">
                                     <div class="span4">
                                         <label for="email1">Email Itinerary 1:</label>
-                                        <input type="email" id="email1">
+                                        <input type="email" id="email1" name="email1" class="required">
                                         <label for="email2">Email Itinerary 2:</label>
-                                        <input type="email" id="email2"> 
+                                        <input type="email" id="email2" name="email2"> 
                                     </div>
                                     <div class="span4">
                                         <label for="cellphone">Cell Phone</label>
-                                        <input type="tel" id="cellphone">
+                                        <input type="tel" id="cellphone" name="cellphone" class="required">
                                         <label for="homephone">Home Phone</label>
-                                        <input type="tel" id="homephone">
+                                        <input type="tel" id="homephone" name="homephone" class="required">
                                     </div>
                                 </div>
                                 <div class="span7 offset1 margin-top">
                                     <p><em>(Optional) </em><strong>Create Discover Rewards Account </strong> to check out faster and earn rewards to Hawaii.     <sup><a href="#">Learn More</a></sup></p>
                                     <div class="span6 offset2">
                                         <label for="password">Password</label>
-                                        <input type="password" id="password">
+                                        <input type="password" id="password" name="password" class="required">
                                         <label for="confirm_password">Confirm Password</label>
-                                        <input type="password" id="confirm_password">
+                                        <input type="password" id="confirm_password" name="confirm_password" class="required">
                                         <div class="controls">
-                                             <label class="pull-right" for="confirmbox"><sub>By joining Discover Rewards you accept all <a href="#">terms and conditions.</a></sub></label>
-                                            <input class="pull-left" type="checkbox" id="confirmbox">
+                                             <label class="pull-right" for="confirm_join"><sub>By joining Discover Rewards you accept all <a href="#">terms and conditions.</a></sub></label>
+                                            <input class="pull-left" type="checkbox" id="confirm_join" name="confirm_join" class="required">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="span9">
-                                    <a class="btn btn-primary btn-large pull-right next_btn3" value="Next">Next</a>
+                                    <input type="submit" class="btn btn-primary btn-large pull-right" value="Next"></input>
                                 </div>
                                 </fieldset>
                             </div>
@@ -316,7 +272,7 @@
                                 </div>
                                 <div class="row-fluid">
                                     <div class="span9">
-                                        <a class="btn btn-primary btn-large pull-right next_btn4" value="Next">Next</a>
+                                        <input type="submit" class="btn btn-primary btn-large pull-right" value="Next"></input>
                                     </div>
                                 </div>
                                 </fieldset>
