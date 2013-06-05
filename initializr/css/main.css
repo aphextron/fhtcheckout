@@ -131,7 +131,14 @@ margin: 0px;
 border: 0px none;
 width: 125%;
 }
-
+.passwordMatch{
+	position: relative;
+	left: 0;
+	top: 0;
+	color: red;
+	font-size: 18px;
+	background: yellow;
+}
 .side_cart_icon{
 padding: 5px;
 }
