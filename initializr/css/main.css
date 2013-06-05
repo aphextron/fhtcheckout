@@ -17,9 +17,19 @@ right: 13px;
 }
 
 .checkout_pages_margin{
-	margin-bottom: 30%;
+	margin-bottom: 50%;
 }
-
+.checkout_list li{
+	line-height: 30px;
+border-bottom: 1px solid rgb(222, 222, 224);
+}
+.checkout_list li:first-child{
+border-top: 1px solid rgb(222, 222, 224);
+}
+.lock{
+	width: 27px;
+margin-top: -7px;
+}
 .margin-top{margin-top: 3.8%;}
 
 .title_price_header{background: rgb(0, 153, 204);}
@@ -61,10 +71,10 @@ font-size: 17px;
 checkout page 1 styles
 **********************************************************************************************/
 .inset_ul{
-	border: 1px solid rgb(124, 149, 180);
-border-radius: 4px;
-padding: 5px;
-margin: 2px 0px 10px auto;
+border: 1px solid rgb(124, 149, 180);
+border-radius: 4px 4px 4px 4px;
+padding: 8px;
+margin: 20px;
 
 }
 .red{
@@ -89,6 +99,14 @@ height: 74px;
 	margin-top: 7px;
 	margin-left: -2px;
 margin-right: -17px;
+cursor: pointer;
+}
+
+.breadcrumb_img:hover{
+	background-position: 0px -51px;
+}
+.highlight{
+	background-position: 0px -51px;
 }
 .error{
 	color: red;
@@ -100,12 +118,13 @@ margin-right: -17px;
 	color: grey;
 }
 .breadcrumb_img a {
-	margin: 0px 43px;
+margin: 0px 53px;
 position: relative;
-top: 12px;
+top: 10px;
 color: white;
 font-size: 16px;
 text-shadow: 0px -1px 0px grey;
+text-decoration: none;
 
 }
 .no_border
@@ -146,6 +165,9 @@ padding: 5px;
 	width: 143px;
 
 }
+.booking_padding{
+	padding: 15px;
+}
 .padding-top{
 	padding-top: 13px;
 }
@@ -156,6 +178,7 @@ padding: 5px;
 
 .checkout_list{
 	list-style-image: url('../img/checkout_check.png');
+	padding: 23px;
 }
 
 .tour_accordion_header{
